@@ -1,0 +1,424 @@
+/* Общие стили */
+body {
+    font-family: system-ui;
+    margin: 0;
+    padding: 0;
+    background-image: url('background.jpg'); /* Путь к вашему фоновому изображению */
+    background-size: cover;
+    background-position: center;
+    color: hsl(0, 0%, 100%);
+}
+
+.page {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #959da6; /* Более темный синий цвет */
+    padding: 10px 0;
+    text-align: center;
+    
+}
+
+header h1 {
+    margin: 0;
+}
+
+.big-photo {
+    position: relative;
+    color: #fff;
+    text-align: center;
+    width: 100%; /* Занимает всю доступную ширину */
+    margin-top: 0px; /* Уменьшаем верхний отступ */
+}
+
+.big-photo .container {
+    position: relative;
+    max-width: 100%; /* Расширяется на всю ширину блока .big-photo */
+    margin: 0 auto;
+}
+
+.big-photo img {
+    width: 100%; /* Расширяется на всю ширину родительского контейнера */
+    height: auto;
+    border-radius: 5px; /* Применяем скругление углов, если необходимо */
+    
+
+}
+
+
+.big-photo .text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 22px;
+    padding: 5px;
+    box-sizing: border-box; /* Учитываем внутренние отступы в размере блока */
+    width: 90%; /* Занимает 90% ширины родительского блока */
+    max-width: 1000px; /* Максимальная ширина для адаптивности */
+}
+
+.big-photo .text-overlay h3,
+.big-photo .text-overlay p {
+    margin: 20px 0; /* Увеличиваем внешний отступ */
+    line-height: 1.5; /* Устанавливаем высоту строки */
+}
+
+h3 {
+    position: relative; /* Необходимо для позиционирования псевдоэлемента */
+}
+
+h3::after {
+    content: ''; /* Добавляем контент для псевдоэлемента */
+    position: absolute; /* Абсолютное позиционирование относительно родительского элемента */
+    bottom: -5px; /* Отступ псевдоэлемента от нижнего края */
+    left: 0; /* Выравнивание псевдоэлемента по левому краю */
+    width: 100%; /* Ширина псевдоэлемента равна ширине родительского элемента */
+}
+
+.big-photo h3::after {
+    border-bottom: 1px solid white; /* Стиль линии (белая линия толщиной 1px) */
+    }
+
+/* Стили для основного контента */
+main {
+    padding: 20px 0;
+    background-color: #f2f2f2;
+}
+
+h2 {
+    color: #2d2e31; /* Более темный синий цвет */
+    text-align: center;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.card {
+    /* Другие стили карточки */
+    background-color: rgba(255, 255, 255, 0.8); /* Прозрачный белый цвет для карточек */
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.card img {
+    display: block; /* Устанавливаем блочный элемент для изображения */
+    margin: 0 auto; /* Устанавливаем автоматичесные отступы по верху и снизу, и центрируем изображение по горизонтали */
+    max-width: 100%; /* Ограничиваем максимальную ширину изображения */
+    max-height: 100%; /* Ограничиваем максимальную высоту изображения */
+    border-radius: 8px 8px 0 0; /* Пример скругления углов */
+}
+
+.card h3 {
+    color: #2d2e31; /* Более темный синий цвет */
+    margin: 10px 0;
+    text-align: center;
+}
+
+.card p {
+    color: #555;
+    margin: 10px;
+    text-align: center;
+}
+
+.card {
+    /* Задаем размеры карточки */
+    width: 310px; /* Пример ширины */
+    height: 400px; /* Пример высоты */
+    /* Другие стили карточки */
+}
+
+
+.card a {
+    /* Сделаем ссылку полностью занимающей размеры карточки */
+    display: block;
+    width: 310px; 
+    height: 400px;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none; /* Убираем подчеркивание для всех ссылок */
+    color: #000; /* Задаем цвет текста для всех ссылок */
+}
+
+.maintext {
+    padding-top: 30px;
+}
+
+.maintext h3 {
+    color: #000;
+    text-align: center;
+    font-size: 24px;
+}
+
+.maintext {
+    color: #000;
+    font-size: 20px;
+}
+
+.maintext a {
+    color: rgb(67, 67, 252); /* Цвет ссылок внутри элемента с классом "maintext" */
+}
+
+.maintext a:hover {
+    text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+#map {
+    width: 100%;
+    height: 400px;
+}
+
+/* Стили для футера */
+footer {
+    background-color: #959da6; /* Более темный синий цвет */
+    text-align: center;
+    padding: 10px 0;
+}
+
+footer a {
+    color: hsl(0, 0%, 100%); /* Устанавливаем начальный цвет текста */
+    text-decoration: underline; 
+}
+
+footer a:hover {
+    text-decoration: none;
+}
+
+  
+.profile-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+}
+
+.profile-text {
+    flex: 1;
+    max-width: 50%; /* Ширина текстового блока - половина контейнера */
+}
+
+.profile-text h1 {
+    font-size: 32px;
+    color: #333;
+}
+
+.profile-text p {
+    color: #000;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.profile-text ul {
+    list-style: none;
+    padding: 0;
+}
+
+.profile-text ul li {
+    color: #000;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.profile-text a {
+    color: #ff00d9;
+    text-decoration: none;
+}
+
+.profile-text a:hover {
+    text-decoration: underline;
+}
+
+/* Общие стили */
+.profile-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+}
+
+.profile-text {
+    flex: 1;
+    max-width: 50%; /* Ширина текстового блока - половина контейнера */
+}
+
+.profile-text h1 {
+    font-size: 32px;
+    color: #333;
+    text-align: center;
+}
+
+.profile-text p {
+    color: #000;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.profile-text ul {
+    list-style: none;
+    padding: 0;
+}
+
+.profile-text ul li {
+    color: #000;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.profile-text a {
+    color: #ff00d9;
+    text-decoration: none;
+}
+
+.profile-text a:hover {
+    text-decoration: underline;
+}
+
+.profile-image {
+    flex: 1;
+    max-width: 50%; /* Ширина блока с изображением - половина контейнера */
+}
+
+.profile-image img {
+    width: 70%;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-image {
+    order: 1; /* Перемещаем изображение вправо (справа от текста) */
+    margin-left: 70px; /* Отступ между текстом и изображением */
+}
+
+.backtomain {
+    text-align: center;
+}
+
+.backtomain a {
+    color: #7e7e7e;
+}
+
+/* Медиа-запрос для устройств с шириной до 700px (мобильные устройства) */
+@media only screen and (max-width: 700px) {
+    
+    .profile-text {
+        flex: 1;
+        max-width: 100%; /* Ширина текстового блока - половина контейнера */
+    }
+    
+    .profile-container {
+        flex-direction: column; /* Изменяем направление flex на колонку */
+        padding: 20px; /* Уменьшаем отступы для мобильной версии */
+    }
+
+    .profile-image {
+        order: 2; /* Перемещаем изображение вниз (под текст) */
+        max-width: 100%; /* Ширина блока с изображением занимает всю ширину */
+        margin-left: auto; /* Выравниваем изображение по центру */
+        margin-right: auto;
+    }
+
+    .profile-image img {
+        width: 100%; /* Изображение занимает всю ширину блока */
+        margin: 0; /* Убираем отступы */
+    }
+}
+
+
+@media only screen and (max-width: 700px) {
+    /* Обновление стилей для заголовка в хедере */
+    header h1 {
+        font-size: 24px; /* Уменьшение размера шрифта для заголовка */
+    }
+
+    .big-photo {
+        display: none; /* Скрыть блок с большой фотографией */
+    }
+
+    /* Показ только карточек на мобильных устройствах */
+    .cards {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Выравнивание по центру по горизонтали */
+        gap: 20px;
+        padding: 20px; /* Добавляем внутренние отступы */
+    }
+
+    /* Задаем ширину и максимальную ширину карточек на мобильных устройствах */
+    .card {
+        width: 100%; /* Занимает 100% ширины контейнера */
+        max-width: 300px; /* Максимальная ширина карточек */
+    }
+
+    /* Обновляем стили для ссылок внутри карточек */
+    .card a {
+        display: block;
+        width: 100%; /* Занимает 100% ширины блока */
+        height: auto;
+        text-align: center; /* Центрируем текст ссылки */
+    }
+
+    /* Корректировка стилей изображений внутри карточек на мобильных устройствах */
+    .card img {
+        width: 100%; /* Занимает всю ширину блока */
+        height: auto; /* Автоматическая высота */
+        border-radius: 0; /* Убираем скругление углов */
+    }
+
+    .maintext {
+        padding-top: 10px;
+    }
+    
+    .maintext h3 {
+        color: #000;
+        text-align: center;
+        font-size: 20px;
+    }
+    
+    .maintext {
+        color: #000;
+        font-size: 15px;
+    }
+    
+    .maintext a {
+        color: rgb(67, 67, 252); /* Цвет ссылок внутри элемента с классом "maintext" */
+    }
+    
+    .maintext a:hover {
+        text-decoration: underline; /* Подчеркивание при наведении */
+    }
+
+
+    /* Обновляем стили для футера на мобильных устройствах */
+    footer {
+        padding-top: 20px; /* Увеличиваем отступ сверху для футера */
+        text-align: center; /* Центрируем содержимое футера */
+    }
+
+    /* Обновление цвета и стилей ссылок внутри футера на мобильных устройствах */
+    footer a {
+        color: #fff; /* Белый цвет текста ссылок */
+        text-decoration: underline; /* Подчеркивание ссылок */
+    }
+
+    /* Убираем подчеркивание при наведении на ссылки внутри футера на мобильных устройствах */
+    footer a:hover {
+        text-decoration: none;
+    }
+}
